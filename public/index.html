@@ -7,6 +7,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
   <link rel="stylesheet" href="styles.css">
   <title>Frontend Mentor | GitHub user search app</title>
+
   <script>
     // It's best to inline this in `head` to avoid FOUC (flash of unstyled content) when changing pages or themes
     if (
@@ -19,7 +20,7 @@
       document.documentElement.classList.remove('dark');
     }
   </script>
-
+  <script src="ApiHandler.js" defer></script>
   <script src="main.js" defer></script>
 </head>
 <body class="font-fontPrimary bg-primary-light-200 dark:bg-primary-dark-800 flex justify-center md:items-center min-h-screen ">
@@ -39,11 +40,11 @@
 
   <main class="flex gap-6 flex-col w-full">
     <section class=" bg-primary-light-100 dark:bg-primary-dark-600 rounded-2xl py-2 pl-5 pr-2 shadow-lg ">
-      <form action="/search" class="flex items-center justify-between">
+      <form action="/search" class="flex items-center justify-between" id="form">
         <div class="flex gap-2 w-full">
           <img src="../starter-code/assets/icon-search.svg" alt="Search icon" class="w-5 h-5 self-center">
           <label for="username" class="sr-only">Enter the username</label>
-          <input maxlength="20" type="text" placeholder="Search GitHub username..." name="username" id="username" class="text-xs md:text-lg w-full mr-2 dark:text-primary-dark-100 dark:bg-primary-dark-600 border-none dark:placeholder:text-primary-dark-100 cursor-pointer" id="search-field">
+          <input onfocus="this.placeholder=''" onblur="this.placeholder='Search GitHub username...'" maxlength="20" type="text" placeholder="Search GitHub username..." name="username" id="username" class="text-xs md:text-lg w-full mr-2 dark:text-primary-dark-100 dark:bg-primary-dark-600 border-none dark:placeholder:text-primary-dark-100 cursor-pointer">
           <span id="error" class="text-red-600 font-bold text-xs self-center min-w-max pr-2 hidden">No results</span>
         </div>
         <button id="search-button" class=" bg-primary-light-400 p-3 rounded-xl text-primary-light-100 font-bold md:px-6 hover:opacity-60">Search</button>
@@ -61,7 +62,7 @@
         
           <div class="pl-8 self-center flex gap-2 flex-col lg:flex-row lg:justify-between">
             <div>
-              <h2 class="text-primary-light-800 font-bold dark:text-primary-dark-100 md:text-xl" id="username">The octocat</h2>
+              <h2 class="text-primary-light-800 font-bold dark:text-primary-dark-100 md:text-xl" id="usernameh">The octocat</h2>
               <p class="text-primary-light-400 text-sm md:text-base" id="github-alias-header">@octocat</p>
             </div>
             
@@ -116,7 +117,7 @@
     </section>
   </main>
 </section>
-<script src="../path/to/flowbite/dist/flowbite.bundle.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
 
 </body>
