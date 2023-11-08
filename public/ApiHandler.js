@@ -50,13 +50,13 @@ document.addEventListener("DOMContentLoaded", function () {
     if (src === null) {
       element.textContent = "Not Available";
       element.removeAttribute("href");
-      element.classList.add("pointer-events-none");
+      
       element.classList.remove("hover:underline");
     } else {
       element.textContent = src;
       element.classList.add("hover:underline");
       element.setAttribute("href", `https://twitter.com/${src}`);
-      element.classList.remove("pointer-events-none");
+      
     }
   };
 
