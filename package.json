@@ -13,6 +13,8 @@
     "tailwindcss": "^3.3.5"
   },
   "dependencies": {
+    "@octokit/core": "^5.0.1",
+    "axios": "^1.6.0",
     "flowbite": "^2.0.0"
   }
 }
