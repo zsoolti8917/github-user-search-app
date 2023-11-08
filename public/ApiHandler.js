@@ -35,7 +35,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const setRepos = (element, src) => {
     if (src === null) {
       element.textContent = "Not Available";
-      element.removeAttribute("href");
       element.classList.add("pointer-events-none");
       element.classList.remove("hover:underline");
     } else {
@@ -49,7 +48,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const setTwitters = (element, src) => {
     if (src === null) {
       element.textContent = "Not Available";
-      element.removeAttribute("href");
       element.classList.add("pointer-events-none");
       element.classList.remove("hover:underline");
     } else {
@@ -64,7 +62,6 @@ document.addEventListener("DOMContentLoaded", function () {
     if (src === null) {
       element.textContent = "Not Available";
       element.classList.add("pointer-events-none");
-      element.removeAttribute("href");
       element.classList.remove("hover:underline");
     } else {
       element.textContent = alt;
